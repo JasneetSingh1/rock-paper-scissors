@@ -2,10 +2,21 @@ var humanScore = 0;
 var computerScore = 0;
 
 function playGame(playRound){
+    try{
+        for(let i = 0; i < 5; i++){
+            playRound(getHumanChoice(), getComputerChoice());
+            console.log("Your score: " + humanScore + "\n" + "Opponent's score: " + computerScore);
+        }
+    }catch(e){}
 
-    for(let i = 0; i < 5; i++){
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log("Your score: " + humanScore + "\n" + "Opponent's score: " + computerScore);
+    console.log("GAME OVER !!");
+    
+    if(humanScore > computerScore){
+        console.log("YOU WIN !!");
+    }else if(humanScore < computerScore){
+        console.log("YOU LOOSE !!");
+    }else{
+        console.log("YOU TIED !!")
     }
     
 }

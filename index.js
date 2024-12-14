@@ -12,7 +12,7 @@ function getComputerChoice(){
             return "rock";
         }
         else{
-            return "scissor";
+            return "scissors";
     
         }
     
@@ -22,3 +22,20 @@ function getComputerChoice(){
         
 }
 
+function getHumanChoice(){
+
+    try{
+        let result = prompt("Enter rock, paper, or scissors");
+        console.log(typeof(result));
+
+        while(result !== "rock" && result !== "scissors" && result !== "paper"){
+            alert("Invalid input");
+            result = prompt("Enter only rock, paper, or scissors");
+        }
+
+        return result;
+        
+    }catch(e){}
+}
+
+console.log(getHumanChoice())

@@ -1,5 +1,14 @@
-let humanScore = 0;
-let computerScore = 0;
+var humanScore = 0;
+var computerScore = 0;
+
+function playGame(playRound){
+
+    for(let i = 0; i < 5; i++){
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log("Your score: " + humanScore + "\n" + "Opponent's score: " + computerScore);
+    }
+    
+}
 
 function getComputerChoice(){
 
@@ -76,3 +85,5 @@ function playRound(humanChoice, computerChoice){
 }
 
 
+
+playGame(playRound);
